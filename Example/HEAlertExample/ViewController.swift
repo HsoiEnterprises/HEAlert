@@ -21,5 +21,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func showAlert(sender: AnyObject) {
+        HEAlert.ok("This Is An Alert", presentingViewController: self) { (_) -> Void in
+            HEAlert.other("Another Alert", message: "This alert is comes from the buttonHandler of the first alert", buttonTitle: "Cool!", presentingViewController: self)
+        }
+    }
 }
 
