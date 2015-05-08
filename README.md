@@ -1,5 +1,5 @@
 # HEAlert
-A convenience around UIAlertController, because sometimes you just want to say "OK".
+A convenience around `UIAlertController`, because sometimes you just want to say "OK".
 
 
 # Background and Approach
