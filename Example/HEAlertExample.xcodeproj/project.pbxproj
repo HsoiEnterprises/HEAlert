@@ -13,6 +13,7 @@
 		790082741AFCD0B700678718 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790082731AFCD0B700678718 /* Images.xcassets */; };
 		790082771AFCD0B700678718 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790082751AFCD0B700678718 /* LaunchScreen.xib */; };
 		790082831AFCD0B700678718 /* HEAlertExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790082821AFCD0B700678718 /* HEAlertExampleTests.swift */; };
+		7900828D1AFCD10300678718 /* HEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900828C1AFCD10300678718 /* HEAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7900827C1AFCD0B700678718 /* HEAlertExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEAlertExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		790082811AFCD0B700678718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		790082821AFCD0B700678718 /* HEAlertExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEAlertExampleTests.swift; sourceTree = "<group>"; };
+		7900828C1AFCD10300678718 /* HEAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HEAlert.swift; path = ../HEAlert/HEAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		7900825E1AFCD0B700678718 = {
 			isa = PBXGroup;
 			children = (
+				7900828C1AFCD10300678718 /* HEAlert.swift */,
 				790082691AFCD0B700678718 /* HEAlertExample */,
 				7900827F1AFCD0B700678718 /* HEAlertExampleTests */,
 				790082681AFCD0B700678718 /* Products */,
@@ -214,6 +217,7 @@
 			files = (
 				7900826F1AFCD0B700678718 /* ViewController.swift in Sources */,
 				7900826D1AFCD0B700678718 /* AppDelegate.swift in Sources */,
+				7900828D1AFCD10300678718 /* HEAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				790082881AFCD0B700678718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		790082891AFCD0B700678718 /* Build configuration list for PBXNativeTarget "HEAlertExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				7900828B1AFCD0B700678718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
