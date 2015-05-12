@@ -50,7 +50,22 @@ import UIKit
     class func ok(title: String) {
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, presentingViewController: nil, buttonHandler: nil)
     }
+
     
+    /**
+    Presents an "OK" alert with the given title.
+    
+    NB: While this is the easist function to use, you should strive to avoid using it and prefer to use functions that
+    take a presentingViewController. This is not an ideal and forward-looking mechanism, but is provided because sometimes
+    it is what you need to solve an immediate issue.
+    
+    :param: title                       The title of the alert.
+    :param: message                     The alert message.
+    */
+    class func ok(title: String, message: String) {
+        HEAlert.showAlert(title, message: message, buttonTitle: nil, presentingViewController: nil, buttonHandler: nil)
+    }
+
     
     
     /**
