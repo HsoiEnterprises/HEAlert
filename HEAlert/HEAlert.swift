@@ -48,7 +48,7 @@ import UIKit
     :param: title                       The title of the alert.
     */
     class func ok(title: String) {
-        HEAlert.showAlert(title, message: nil, buttonTitle: nil, presentingViewController: nil, buttonHandler: nil)
+        HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
     
@@ -63,7 +63,7 @@ import UIKit
     :param: message                     The alert message.
     */
     class func ok(title: String, message: String) {
-        HEAlert.showAlert(title, message: message, buttonTitle: nil, presentingViewController: nil, buttonHandler: nil)
+        HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
     
@@ -76,7 +76,7 @@ import UIKit
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
     class func ok(title: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
-        HEAlert.showAlert(title, message: nil, buttonTitle: nil, presentingViewController: presentingViewController, buttonHandler: buttonHandler)
+        HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
     /**
@@ -88,7 +88,7 @@ import UIKit
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
     class func ok(title: String, message: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
-        HEAlert.showAlert(title, message: message, buttonTitle: nil, presentingViewController: presentingViewController, buttonHandler: buttonHandler)
+        HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
     
@@ -102,7 +102,7 @@ import UIKit
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
     class func other(title: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
-        HEAlert.showAlert(title, message: nil, buttonTitle: buttonTitle, presentingViewController: presentingViewController, buttonHandler: buttonHandler)
+        HEAlert.showAlert(title, message: nil, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
     /**
@@ -115,9 +115,46 @@ import UIKit
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
     class func other(title: String, message: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
-        HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, presentingViewController: presentingViewController, buttonHandler: buttonHandler)
+        HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
+    /**
+    Presents an alert with the given title, message, custom Cancel button title, and custom button title.
+    
+    Often you need 2 buttons, one to do something and one to not do something (but still dismiss the alert). So the cancelTitle allows for a Cancel button
+    (or whatever you wish to name it "Later", "No", etc.), and the buttonTitle allows for the "OK"/default button and then the buttonHandler will be
+    executed upon the tap to that OK button.
+    
+    :param: title                       The title of the alert.
+    :param: message                     The alert message.
+    :param: buttonTitle                 The button's title.
+    :param: cancelTitle                 The cancel button's title
+    :param: presentingViewController    The UIViewController that will present the alert.
+    :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
+    */
+    class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)?) {
+        HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
+    }
+
+    /**
+    Presents an alert with the given title, message, custom Cancel button title, and custom button title.
+    
+    Often you need 2 buttons, one to do something and one do something else. So the cancelTitle allows for a Cancel button (or whatever you wish 
+    to name it "Later", "No", etc.) and a cancelHandler to be invoked upon tapping that button, and the buttonTitle allows for the "OK"/default button 
+    and then the buttonHandler will be executed upon the tap to that OK button.
+    
+    :param: title                       The title of the alert.
+    :param: message                     The alert message.
+    :param: buttonTitle                 The button's title.
+    :param: cancelTitle                 The cancel button's title
+    :param: presentingViewController    The UIViewController that will present the alert.
+    :param: cancelHandler               An optional closure invoked in response to the user tapping the cancel button.
+    :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
+    */
+    class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, cancelHandler: ((UIAlertAction!) -> Void)?, buttonHandler: ((UIAlertAction!) -> Void)?) {
+        HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: cancelHandler, buttonHandler: buttonHandler)
+    }
+
     
     
     /**
@@ -130,7 +167,7 @@ import UIKit
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
     class func error(error: NSError, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
-        HEAlert.showAlert(error.localizedDescription, message: error.localizedRecoverySuggestion, buttonTitle: nil, presentingViewController: presentingViewController, buttonHandler: buttonHandler)
+        HEAlert.showAlert(error.localizedDescription, message: error.localizedRecoverySuggestion, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
     
@@ -138,13 +175,19 @@ import UIKit
     /**
     Private function that actually does all of the heavy lifting.
     
+    Note that for cancelTitle and buttonHandler to be honored, there must be a presentingViewController. We need the presentingViewController so we
+    can have the hook to execute the buttonHandler upon tapping the main/default/OK button. And if we cannot excute some action in response to
+    tapping main/default/OK button, there's no point in having an alternative "cancel" button that will do nothing.
+    
     :param: title                       The title of the alert.
     :param: message                     The alert message. If no message is provided, no message is displayed.
     :param: buttonTitle                 The alert has a single button (default/OK), and this will be the title. If nil or empty, will default to "OK".
+    :param: cancelTitle                 The cancel button's title. If nil or empty, will not be present (a 1 button alert). Will only be utilized if presentingViewController != nil
     :param: presentingViewController    The UIViewController that will present the UIAlertController. Preferred to be non-nil, but if nil will cause logic to fall back to UIAlertView (this may change depending upon Apple's future directions)
+    :param: cancelHandler               Optional closure invoked in response to the user tapping the cancel button. Only utilized if presentingViewController != nil and cancelTitle is non-nil and non-empty. BUT perfectly acceptable to have a valid cancelTitle and a nil cancelHandler (maybe you don't want to do anything interesting upon cancel).
     :param: buttonHandler               Optional closure invoked in response to the user tapping the button. Only utilized if presentingViewController != nil.
     */
-    private class func showAlert(title: String, message: String?, buttonTitle: String?, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction!) -> Void)?) {
+    private class func showAlert(title: String, message: String?, buttonTitle: String?, cancelTitle: String?, presentingViewController: UIViewController?, cancelHandler: ((UIAlertAction!) -> Void)?, buttonHandler: ((UIAlertAction!) -> Void)?) {
 
         // Hsoi 2015-05-08 - One useful thing about UIAlertView is you can present them from anywhere -- you don't
         // need a presenting UIViewController. While some may argue you should never show an alert from
@@ -181,10 +224,16 @@ import UIKit
             let okAction = UIAlertAction(title: okTitle, style: .Default, handler: buttonHandler)
             alertController.addAction(okAction)
             
+            if let cancelTitle = cancelTitle where !cancelTitle.isEmpty {
+                let cancelAction = UIAlertAction(title: cancelTitle, style: .Cancel, handler: cancelHandler)
+                alertController.addAction(cancelAction)
+            }
+            
             presentingViewController.presentViewController(alertController, animated: true, completion: nil)
         }
         else {
             assert(buttonHandler == nil, "buttonHandler will not be executed if there's no presentingViewController")
+            assert(cancelTitle == nil, "cancelTitle will not be honored since there's no way to handle a buttonHandler and thus have 2 distinct results from 2 different button taps")
             
             let alertView = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: okTitle)
             alertView.show()
