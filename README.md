@@ -12,19 +12,47 @@ That's why I created `HEAlert`.
 
 Developed with
 
-- Xcode 6.4 beta 2 (should work with Xcode 6.3.1)
+- Xcode 6.4
 - Swift 1.2
 - iOS 8 (minimum, required)
 
 
 # Installation
 
-Until Cocoapods integration occurs, obtain the code as a git submodule. Add `HEAlert.swift` to your project and off you go.
+## Submodule
+
+You can easily obtain git as a submodule, and simply add `HEAlert.swift` to your project. Off you go!
+
+## Cocoapods
+
+[CocoaPods][CocoaPods] is a dependency manager for Cocoa projects.
+
+CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate HEAlert into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'HEAlert'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 
 # Usage
 
-To be added, but hopefully the source code is readable and simple enough.
+Usage is fairly straightforward, and the code is fully documented. There's also an example application that demonstrates a simple usage of the class.
 
 
 # Contact
@@ -42,8 +70,8 @@ To be added, but hopefully the source code is readable and simple enough.
 BSD 3-clause “New” or “Revised” License. See included "License" file.
 
 
-
 [hsoienterprises-website]: http://www.hsoienterprises.com
 [hsoienterprises-facebook]: https://www.facebook.com/HsoiEnterprises
 [hsoienterprises-twitter]: http://twitter.com/hsoienterprises
 [hsoi-twitter]: http://twitter.com/hsoi
+[cocoapods]: http://cocoapods.org
