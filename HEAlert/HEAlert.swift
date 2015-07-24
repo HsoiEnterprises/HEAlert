@@ -52,8 +52,9 @@ import UIKit
     }
 
     
+    
     /**
-    Presents an "OK" alert with the given title.
+    Presents an "OK" alert with the given title and message.
     
     NB: While this is the easist function to use, you should strive to avoid using it and prefer to use functions that
     take a presentingViewController. This is not an ideal and forward-looking mechanism, but is provided because sometimes
@@ -69,7 +70,9 @@ import UIKit
     
     
     /**
-    Presents an "OK" alert with the given title.
+    Presents an "OK" alert with the given title, upon the given presentingViewController.
+    
+    Provides for an optional closure to be executed when the OK button is tapped.
     
     :param: title                       The title of the alert.
     :param: presentingViewController    The UIViewController that will present the alert.
@@ -79,9 +82,13 @@ import UIKit
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
-    /**
-    Presents an "OK" alert with the given title and message.
     
+    
+    /**
+    Presents an "OK" alert with the given title and message, upon the given presentingViewController.
+    
+    Provides for an optional closure to be executed when the OK button is tapped.
+
     :param: title                       The title of the alert.
     :param: message                     The alert message.
     :param: presentingViewController    The UIViewController that will present the alert.
@@ -94,8 +101,10 @@ import UIKit
     
     
     /**
-    Presents an alert with the given title and custom button title.
+    Presents an alert with the given title and custom button title, upon the given presentingViewController.
     
+    Provides for an optional closure to be executed when the button is tapped.
+
     :param: title                       The title of the alert.
     :param: buttonTitle                 The button's title.
     :param: presentingViewController    The UIViewController that will present the alert.
@@ -105,9 +114,13 @@ import UIKit
         HEAlert.showAlert(title, message: nil, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
-    /**
-    Presents an alert with the given title, message, and custom button title.
     
+    
+    /**
+    Presents an alert with the given title, message, and custom button title, upon the given presentingViewController.
+    
+    Provides for an optional closure to be executed when the button is tapped.
+
     :param: title                       The title of the alert.
     :param: message                     The alert message.
     :param: buttonTitle                 The button's title.
@@ -118,30 +131,34 @@ import UIKit
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
+    
+    
     /**
-    Presents an alert with the given title, message, custom Cancel button title, and custom button title.
+    Presents an alert with the given title, message, custom Cancel button title, and custom Default button title; upon the given presentingViewController.
     
     Often you need 2 buttons, one to do something and one to not do something (but still dismiss the alert). So the cancelTitle allows for a Cancel button
-    (or whatever you wish to name it "Later", "No", etc.), and the buttonTitle allows for the "OK"/default button and then the buttonHandler will be
-    executed upon the tap to that OK button.
+    (or whatever you wish to name it "Later", "No", etc.), and the buttonTitle allows for the "OK"/default button and then the optional buttonHandler,
+    if provided, will be executed upon the tap to that OK/default button.
     
     :param: title                       The title of the alert.
     :param: message                     The alert message.
     :param: buttonTitle                 The button's title.
     :param: cancelTitle                 The cancel button's title
     :param: presentingViewController    The UIViewController that will present the alert.
-    :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
+    :param: buttonHandler               An optional closure invoked in response to the user tapping the default button.
     */
     public class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)?) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
+    
+    
 
     /**
-    Presents an alert with the given title, message, custom Cancel button title, and custom button title.
+    Presents an alert with the given title, message, custom Cancel button title, and custom Default button title; upon the given presentingViewController.
     
     Often you need 2 buttons, one to do something and one do something else. So the cancelTitle allows for a Cancel button (or whatever you wish 
     to name it "Later", "No", etc.) and a cancelHandler to be invoked upon tapping that button, and the buttonTitle allows for the "OK"/default button 
-    and then the buttonHandler will be executed upon the tap to that OK button.
+    and then the optional buttonHandler will be executed, if provided, upon the tap to that OK/default button.
     
     :param: title                       The title of the alert.
     :param: message                     The alert message.
@@ -158,9 +175,11 @@ import UIKit
     
     
     /**
-    Presents an "OK" alert for the given NSError.
+    Presents an "OK" alert for the given NSError, upon the given presentingViewController.
     
     The alert's title will be the localizedDescription, and the alert's message will be the localizedRecoverySuggestion.
+    
+    Provides for an optional closure to be executed when the "OK" button is tapped.
     
     :param: error                       The NSError to display.
     :param: presentingViewController    The UIViewController that will present the alert.
