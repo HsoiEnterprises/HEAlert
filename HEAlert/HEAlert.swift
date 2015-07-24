@@ -47,7 +47,7 @@ import UIKit
     
     :param: title                       The title of the alert.
     */
-    class func ok(title: String) {
+    public class func ok(title: String) {
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
@@ -62,7 +62,7 @@ import UIKit
     :param: title                       The title of the alert.
     :param: message                     The alert message.
     */
-    class func ok(title: String, message: String) {
+    public class func ok(title: String, message: String) {
         HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
@@ -75,7 +75,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func ok(title: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
+    public class func ok(title: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
@@ -87,7 +87,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func ok(title: String, message: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
+    public class func ok(title: String, message: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
         HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
@@ -101,7 +101,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func other(title: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
+    public class func other(title: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
         HEAlert.showAlert(title, message: nil, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
@@ -114,7 +114,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func other(title: String, message: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
+    public class func other(title: String, message: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
@@ -132,7 +132,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)?) {
+    public class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction!) -> Void)?) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -151,7 +151,7 @@ import UIKit
     :param: cancelHandler               An optional closure invoked in response to the user tapping the cancel button.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, cancelHandler: ((UIAlertAction!) -> Void)?, buttonHandler: ((UIAlertAction!) -> Void)?) {
+    public class func other(title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, cancelHandler: ((UIAlertAction!) -> Void)?, buttonHandler: ((UIAlertAction!) -> Void)?) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: cancelHandler, buttonHandler: buttonHandler)
     }
 
@@ -166,7 +166,7 @@ import UIKit
     :param: presentingViewController    The UIViewController that will present the alert.
     :param: buttonHandler               An optional closure invoked in response to the user tapping the button.
     */
-    class func error(error: NSError, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
+    public class func error(error: NSError, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction!) -> Void)? = nil) {
         HEAlert.showAlert(error.localizedDescription, message: error.localizedRecoverySuggestion, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
     
