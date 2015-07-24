@@ -4,9 +4,37 @@ A convenience around `UIAlertController`, because sometimes you just want to say
 
 # Background and Approach
 
-`UIAlertController` is awesome, but sometimes it's too much. How many times do you simply alert with a message and an "OK" button? Easy with `UIAlertView`, but cumbersome with `UIAlertController`.
+`UIAlertController` is awesome, but sometimes it's too much. How many times do you want to simply alert with a message and an "OK" button? Somewhat easy with `UIAlertView`, certainly cumbersome with `UIAlertController`, but simple with `HEAlert`.
 
 That's why I created `HEAlert`.
+
+Go from:
+
+```swift
+  let alertView = UIAlertView(title: "Hello World", message: nil, delegate: nil, cancelButtonTitle: "OK")
+  alertView.show()
+```
+
+or:
+
+```swift
+let alertController = UIAlertController(title: "Hello World", message: nil, preferredStyle: .Alert)
+let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+alertController.addAction(action)
+self.presentViewController(alertController, animated: true, completion: nil)
+```
+
+**to:**
+
+```swift
+HEAlert.ok("Hello World")
+```
+
+or:
+
+```swift
+HEAlert.ok("Hello World", presentingViewController: self)
+```
 
 # Supported OS and SDK
 
@@ -54,6 +82,43 @@ $ pod install
 
 Usage is fairly straightforward, and the code is fully documented. There's also an example application that demonstrates a simple usage of the class.
 
+## Simple OK alert
+
+```swift
+HEAlert.ok("Hello World")
+```
+
+or:
+
+```swift
+HEAlert.ok("Hello World", presentingViewController: self)
+```
+
+## OK with Message
+
+```swift
+HEAlert.ok("Hello World", message: "This is my first HEAlert", presentingViewController: self)
+```
+
+## More Complicated
+
+You can customize a fair portion of the `HEAlert` behaviors:
+
+```swift
+HEAlert.other("Do you like waffles?", message: "This is an important question", buttonTitle: "Yes", cancelTitle: "No", presentingViewController: self, cancelHandler: { (_) -> Void in
+    println("Must like pancakes instead")
+}) { (_) -> Void in
+    println("Get the syrup!")
+}
+```
+
+## NSError
+
+Easy display of an `NSError`:
+
+```swift
+HEAlert.error(anNSError, presentingViewController: self, buttonHandler: nil)
+```
 
 # Contact
 
