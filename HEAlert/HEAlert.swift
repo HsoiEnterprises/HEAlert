@@ -36,7 +36,7 @@ import Foundation
 import UIKit
 
 
-@objc public class HEAlert {
+public class HEAlert {
     
     /**
     Presents an "OK" alert with the given title.
