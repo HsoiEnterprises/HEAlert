@@ -1,3 +1,9 @@
+![Build Status](https://travis-ci.org/hsoienterprises/HEAlert.svg)
+![Cocoapods Compatible](https://img.shields.io/cocoapods/v/HEAlert.svg)
+![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
+![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+
+
 # HEAlert
 A convenience around `UIAlertController`, because sometimes you just want to say "OK".
 
@@ -46,6 +52,9 @@ Developed with
 
 
 # Installation
+
+Currently supports being installed by simple source code addition, by git submodule, or by Cocoapods (preferred).
+
 
 ## Submodule
 
@@ -129,6 +138,12 @@ HEAlert.error(anNSError, presentingViewController: self, buttonHandler: nil)
 
 ## Creator
 - John C. Daub [(@hsoi)][hsoi-twitter]
+
+
+# Changes / Release Notes
+
+See included `CHANGELOG.md` file.
+
 
 # License
 
