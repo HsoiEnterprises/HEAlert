@@ -1,5 +1,19 @@
 # HEAlert CHANGELOG
 
+## v0.5 - ???
+
+**NB: Now requires Xcode 7 and Swift 2.**
+
+### Added
+
+* Project file, to enable stand-alone building of HEAlert.framework
+* travis-ci support
+
+### Changed
+
+* Conformance with Xcode 7 and Swift 2
+* Merged stand-alone sample project into the main .xcodeproj file as a secondary target.
+
 
 ## v0.4.2 - 2015-06-24
 
