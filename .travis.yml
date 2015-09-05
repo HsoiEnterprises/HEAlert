@@ -1,4 +1,8 @@
 language: objective-c
 osx_image: xcode7
+notifications:
+  email: 
+    - hsoi@hsoi.com
+    - hsoi@hsoienterprises.com
 script:
     - xcodebuild -project HEAlert.xcodeproj -scheme HEAlert -sdk iphonesimulator9 test
