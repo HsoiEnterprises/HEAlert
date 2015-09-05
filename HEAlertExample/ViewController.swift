@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HEAlert
 
 class ViewController: UIViewController {
 
