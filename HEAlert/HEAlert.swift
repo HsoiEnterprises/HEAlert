@@ -36,6 +36,27 @@ import Foundation
 import UIKit
 
 
+/**
+HEAlert - a utility class to simplify the presentation of alerts.
+
+UIAlertController is excellent, but the complexity can be a bit much when all you need is a simple "OK" alert.
+HEAlert wraps up UIAlertController, providing a simplified but expansive API to make alerts easier.
+
+Go from this:
+
+```
+let alertController = UIAlertController(title: "Hello World", message: nil, preferredStyle: .Alert)
+let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+alertController.addAction(action)
+self.presentViewController(alertController, animated: true, completion: nil)
+```
+
+to this:
+
+```
+HEAlert.ok("Hello World", presentingViewController: self)
+```
+*/
 public class HEAlert {
     
     /**
