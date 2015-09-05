@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/hsoienterprises/HEAlert.svg)
+![Build Status](https://travis-ci.org/HsoiEnterprises/HEAlert.svg)
 ![Cocoapods Compatible](https://img.shields.io/cocoapods/v/HEAlert.svg)
 ![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
