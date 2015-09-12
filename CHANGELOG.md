@@ -1,5 +1,10 @@
 # HEAlert CHANGELOG
 
+## v0.5.1 - 2015-09-12
+
+* Minor adjustments for Xcode 7 and Cocoapods.
+
+
 ## v0.5 - 2015-09-12
 
 **NB: Now requires Xcode 7 and Swift 2.**
