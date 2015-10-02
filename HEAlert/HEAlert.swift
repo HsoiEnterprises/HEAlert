@@ -57,7 +57,7 @@ to this:
 HEAlert.ok("Hello World", presentingViewController: self)
 ```
 */
-public class HEAlert {
+public class HEAlert: NSObject {
     
     /**
     Presents an "OK" alert with the given title.
