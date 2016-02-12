@@ -1,5 +1,5 @@
 ![Build Status](https://travis-ci.org/HsoiEnterprises/HEAlert.svg)
-![Cocoapods Compatible](https://img.shields.io/cocoapods/v/HEAlert.svg)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/HEAlert.svg)
 ![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 
@@ -53,14 +53,14 @@ With v0.5, `HEAlert` has moved to Swift 2 and Xcode 7. If you still need Xcode 6
 
 # Installation
 
-Currently supports being installed by simple source code addition, by git submodule, or by Cocoapods (preferred).
+Currently supports being installed by simple source code addition, by git submodule, or by CocoaPods (preferred).
 
 
 ## Submodule
 
 You can easily obtain git as a submodule, and simply add `HEAlert.swift` to your project. Off you go!
 
-## Cocoapods
+## CocoaPods
 
 [CocoaPods][CocoaPods] is a dependency manager for Cocoa projects.
 
