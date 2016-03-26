@@ -1,5 +1,11 @@
 # HEAlert CHANGELOG
 
+## v0.5.2 - 2016-03-26
+
+* Verified against Xcode 7.3 and Swift 2.2 (no changes made, just verified)
+* HEAlert inherits from `NSObject` so it can be bridged into Objective-C code
+* Fixed codesigning (thanx to @jlandon)
+
 ## v0.5.1 - 2015-09-12
 
 * Minor adjustments for Xcode 7 and Cocoapods.
