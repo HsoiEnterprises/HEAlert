@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		79D3D4201B9B82FD00742BE7 /* HEAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D3D41F1B9B82FD00742BE7 /* HEAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79D3D4271B9B82FD00742BE7 /* HEAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D3D41C1B9B82FD00742BE7 /* HEAlert.framework */; settings = {ASSET_TAGS = (); }; };
+		79D3D4271B9B82FD00742BE7 /* HEAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D3D41C1B9B82FD00742BE7 /* HEAlert.framework */; };
 		79D3D42C1B9B82FD00742BE7 /* HEAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3D42B1B9B82FD00742BE7 /* HEAlertTests.swift */; };
-		79D3D4371B9B869500742BE7 /* HEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3D4361B9B869500742BE7 /* HEAlert.swift */; settings = {ASSET_TAGS = (); }; };
-		79D3D4381B9B869500742BE7 /* HEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3D4361B9B869500742BE7 /* HEAlert.swift */; settings = {ASSET_TAGS = (); }; };
+		79D3D4371B9B869500742BE7 /* HEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3D4361B9B869500742BE7 /* HEAlert.swift */; };
+		79D3D4381B9B869500742BE7 /* HEAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3D4361B9B869500742BE7 /* HEAlert.swift */; };
 		79DE3C6D1B9B8EF000BC1E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE3C6C1B9B8EF000BC1E3A /* AppDelegate.swift */; };
 		79DE3C6F1B9B8EF000BC1E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE3C6E1B9B8EF000BC1E3A /* ViewController.swift */; };
 		79DE3C721B9B8EF000BC1E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79DE3C701B9B8EF000BC1E3A /* Main.storyboard */; };
@@ -206,14 +206,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Hsoi Enterprises LLC";
 				TargetAttributes = {
 					79D3D41B1B9B82FD00742BE7 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					79D3D4251B9B82FD00742BE7 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					79DE3C691B9B8EF000BC1E3A = {
 						CreatedOnToolsVersion = 7.0;
@@ -342,8 +344,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -390,8 +394,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -411,6 +417,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -432,7 +439,7 @@
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -457,6 +464,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -474,7 +482,7 @@
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -498,6 +506,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -508,6 +517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HEAlertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -518,6 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HEAlertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
