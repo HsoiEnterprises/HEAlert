@@ -1,5 +1,11 @@
 # HEAlert CHANGELOG
 
+## v1.0.0 - 2016-09-23
+
+Going 1.0, because it's time.
+
+* Brings Swift 3 and Xcode 8 support (thank you @kreeger)
+
 ## v0.5.3 - 2016-09-23
 
 **THIS IS THE LAST VERSION TO SUPPORT SWIFT 2.2**
