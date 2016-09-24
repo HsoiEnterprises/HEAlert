@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                 = 'HEAlert'
-  spec.version              = '0.5.2'
+  spec.version              = '1.0.0'
   spec.homepage             = 'https://github.com/HsoiEnterprises/HEAlert'
   spec.source               = { :git => 'https://github.com/HsoiEnterprises/HEAlert.git', :tag => "v#{spec.version}" }
   spec.summary              = 'A convenience around UIAlertController, because sometimes you just want to say "OK".'

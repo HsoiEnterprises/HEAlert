@@ -44,9 +44,11 @@ HEAlert.ok("Hello World", presentingViewController: self)
 
 # Supported OS and SDK
 
-- Xcode 7.2.1+
-- Swift 2.1+
+- Xcode 8.0+
+- Swift 3+
 - iOS 8 (minimum, required)
+
+With v1.0, `HEAlert` has moved to Swift 3 and Xcode 8. If you need need Swift 2.2 support, use the `v0.5.3` tag.  There has been no explicit effort to support Swift 2.3.
 
 With v0.5, `HEAlert` has moved to Swift 2 and Xcode 7. If you still need Xcode 6.x (Swift 1.2) support, you can use older versions of `HEAlert` such as v0.4.2.
 

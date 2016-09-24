@@ -1,5 +1,20 @@
 # HEAlert CHANGELOG
 
+## v1.0.0 - 2016-09-23
+
+Going 1.0, because it's time.
+
+* Brings Swift 3 and Xcode 8 support (thank you @kreeger)
+
+## v0.5.3 - 2016-09-23
+
+**THIS IS THE LAST VERSION TO SUPPORT SWIFT 2.2**
+
+If you need Swift 2.2 support, use this tag. Going forward, `HEAlert` will be Swift 3.
+
+* Fixed Travis for Xcode 7.3
+
+
 ## v0.5.2 - 2016-03-26
 
 * Verified against Xcode 7.3 and Swift 2.2 (no changes made, just verified)
