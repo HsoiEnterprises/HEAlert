@@ -57,6 +57,7 @@ to this:
 HEAlert.ok("Hello World", presentingViewController: self)
 ```
 */
+@objc
 open class HEAlert: NSObject {
 
     /**
@@ -68,7 +69,7 @@ open class HEAlert: NSObject {
 
     - parameter title:                       The title of the alert.
     */
-    open class func ok(_ title: String) {
+    @objc open class func ok(_ title: String) {
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
@@ -84,7 +85,7 @@ open class HEAlert: NSObject {
     - parameter title:                       The title of the alert.
     - parameter message:                     The alert message.
     */
-    open class func ok(_ title: String, message: String) {
+    @objc open class func ok(_ title: String, message: String) {
         HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: nil, cancelHandler: nil, buttonHandler: nil)
     }
 
@@ -99,7 +100,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func ok(_ title: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
+    @objc open class func ok(_ title: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
         HEAlert.showAlert(title, message: nil, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -115,7 +116,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func ok(_ title: String, message: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
+    @objc open class func ok(_ title: String, message: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
         HEAlert.showAlert(title, message: message, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -131,7 +132,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func other(_ title: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
+    @objc open class func other(_ title: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
         HEAlert.showAlert(title, message: nil, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -148,7 +149,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func other(_ title: String, message: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
+    @objc open class func other(_ title: String, message: String, buttonTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -168,7 +169,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the default button.
     */
-    open class func other(_ title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)?) {
+    @objc open class func other(_ title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, buttonHandler: ((UIAlertAction?) -> Void)?) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
@@ -189,7 +190,7 @@ open class HEAlert: NSObject {
     - parameter cancelHandler:               An optional closure invoked in response to the user tapping the cancel button.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func other(_ title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, cancelHandler: ((UIAlertAction?) -> Void)?, buttonHandler: ((UIAlertAction?) -> Void)?) {
+    @objc open class func other(_ title: String, message: String, buttonTitle: String, cancelTitle: String, presentingViewController: UIViewController, cancelHandler: ((UIAlertAction?) -> Void)?, buttonHandler: ((UIAlertAction?) -> Void)?) {
         HEAlert.showAlert(title, message: message, buttonTitle: buttonTitle, cancelTitle: cancelTitle, presentingViewController: presentingViewController, cancelHandler: cancelHandler, buttonHandler: buttonHandler)
     }
 
@@ -206,7 +207,7 @@ open class HEAlert: NSObject {
     - parameter presentingViewController:    The UIViewController that will present the alert.
     - parameter buttonHandler:               An optional closure invoked in response to the user tapping the button.
     */
-    open class func error(_ error: NSError, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
+    @objc open class func error(_ error: NSError, presentingViewController: UIViewController?, buttonHandler: ((UIAlertAction?) -> Void)? = nil) {
         HEAlert.showAlert(error.localizedDescription, message: error.localizedRecoverySuggestion, buttonTitle: nil, cancelTitle: nil, presentingViewController: presentingViewController, cancelHandler: nil, buttonHandler: buttonHandler)
     }
 
